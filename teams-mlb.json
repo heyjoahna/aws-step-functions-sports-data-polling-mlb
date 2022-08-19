@@ -1,0 +1,182 @@
+[
+ {
+   "market": "Arizona",
+   "name": "Diamondbacks",
+   "abbr": "ARI",
+   "id": "25507be1-6a68-4267-bd82-e097d94b359b"
+ },
+ {
+   "market": "Atlanta",
+   "name": "Braves",
+   "abbr": "ATL",
+   "id": "12079497-e414-450a-8bf2-29f91de646bf"
+ },
+ {
+   "market": "Baltimore",
+   "name": "Orioles",
+   "abbr": "BAL",
+   "id": "75729d34-bca7-4a0f-b3df-6f26c6ad3719"
+ },
+ {
+   "market": "Boston",
+   "name": "Red Sox",
+   "abbr": "BOS",
+   "id": "93941372-eb4c-4c40-aced-fe3267174393"
+ },
+ {
+   "market": "Chicago",
+   "name": "Cubs",
+   "abbr": "CHC",
+   "id": "55714da8-fcaf-4574-8443-59bfb511a524"
+ },
+ {
+   "market": "Chicago",
+   "name": "White Sox",
+   "abbr": "CWS",
+   "id": "47f490cd-2f58-4ef7-9dfd-2ad6ba6c1ae8"
+ },
+ {
+   "market": "Cincinnati",
+   "name": "Reds",
+   "abbr": "CIN",
+   "id": "c874a065-c115-4e7d-b0f0-235584fb0e6f"
+ },
+ {
+   "market": "Cleveland",
+   "name": "Indians",
+   "abbr": "CLE",
+   "id": "80715d0d-0d2a-450f-a970-1b9a3b18c7e7"
+ },
+ {
+   "market": "Colorado",
+   "name": "Rockies",
+   "abbr": "COL",
+   "id": "29dd9a87-5bcc-4774-80c3-7f50d985068b"
+ },
+ {
+   "market": "Detroit",
+   "name": "Tigers",
+   "abbr": "DET",
+   "id": "575c19b7-4052-41c2-9f0a-1c5813d02f99"
+ },
+ {
+   "market": "Houston",
+   "name": "Astros",
+   "abbr": "HOU",
+   "id": "eb21dadd-8f10-4095-8bf3-dfb3b779f107"
+ },
+ {
+   "market": "Kansas City",
+   "name": "Royals",
+   "abbr": "KC",
+   "id": "833a51a9-0d84-410f-bd77-da08c3e5e26e"
+ },
+ {
+   "market": "Los Angeles",
+   "name": "Angels",
+   "abbr": "LAA",
+   "id": "4f735188-37c8-473d-ae32-1f7e34ccf892"
+ },
+ {
+   "market": "Los Angeles",
+   "name": "Dodgers",
+   "abbr": "LAD",
+   "id": "ef64da7f-cfaf-4300-87b0-9313386b977c"
+ },
+ {
+   "market": "Miami",
+   "name": "Marlins",
+   "abbr": "MIA",
+   "id": "03556285-bdbb-4576-a06d-42f71f46ddc5"
+ },
+ {
+   "market": "Milwaukee",
+   "name": "Brewers",
+   "abbr": "MIL",
+   "id": "dcfd5266-00ce-442c-bc09-264cd20cf455"
+ },
+ {
+   "market": "Minnesota",
+   "name": "Twins",
+   "abbr": "MIN",
+   "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+ },
+ {
+   "market": "New York",
+   "name": "Mets",
+   "abbr": "NYM",
+   "id": "f246a5e5-afdb-479c-9aaa-c68beeda7af6"
+ },
+ {
+   "market": "New York",
+   "name": "Yankees",
+   "abbr": "NYY",
+   "id": "a09ec676-f887-43dc-bbb3-cf4bbaee9a18"
+ },
+ {
+   "market": "Oakland",
+   "name": "Athletics",
+   "abbr": "OAK",
+   "id": "27a59d3b-ff7c-48ea-b016-4798f560f5e1"
+ },
+ {
+   "market": "Philadelphia",
+   "name": "Phillies",
+   "abbr": "PHI",
+   "id": "2142e1ba-3b40-445c-b8bb-f1f8b1054220"
+ },
+ {
+   "market": "Pittsburgh",
+   "name": "Pirates",
+   "abbr": "PIT",
+   "id": "481dfe7e-5dab-46ab-a49f-9dcc2b6e2cfd"
+ },
+ {
+   "market": "San Diego",
+   "name": "Padres",
+   "abbr": "SD",
+   "id": "d52d5339-cbdd-43f3-9dfa-a42fd588b9a3"
+ },
+ {
+   "market": "San Francisco",
+   "name": "Giants",
+   "abbr": "SF",
+   "id": "a7723160-10b7-4277-a309-d8dd95a8ae65"
+ },
+ {
+   "market": "Seattle",
+   "name": "Mariners",
+   "abbr": "SEA",
+   "id": "43a39081-52b4-4f93-ad29-da7f329ea960"
+ },
+ {
+   "market": "St. Louis",
+   "name": "Cardinals",
+   "abbr": "STL",
+   "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+ },
+ {
+   "market": "Tampa Bay",
+   "name": "Rays",
+   "abbr": "TB",
+   "id": "bdc11650-6f74-49c4-875e-778aeb7632d9"
+ },
+ {
+   "market": "Texas",
+   "name": "Rangers",
+   "abbr": "TEX",
+   "id": "d99f919b-1534-4516-8e8a-9cd106c6d8cd"
+ },
+ {
+   "market": "Toronto",
+   "name": "Blue Jays",
+   "abbr": "TOR",
+   "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+ },
+ {
+   "market": "Washington",
+   "name": "Nationals",
+   "abbr": "WSH",
+   "id": "d89bed32-3aee-4407-99e3-4103641b999a"
+ }
+]

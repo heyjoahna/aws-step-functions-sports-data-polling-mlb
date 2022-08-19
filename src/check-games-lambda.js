@@ -23,14 +23,14 @@ const gameDate = `${gameYear}-${gameMonth}-${gameDay}`;
 
 // We are going to use sportradar api endpoint
 // More info can be found here
-// https://developer.sportradar.com/docs/read/hockey/NHL_v7
+// https://developer.sportradar.com/docs/read/baseball/MLB_v7
 const gamesUrl = "api.sportradar.us";
 const accessLevel = "trial"; // In production accounts, this will be production
 
-// Schedule endpoint for NHL
-// https://developer.sportradar.com/docs/read/hockey/NHL_v7#daily-schedule
-// https://feed.elasticstats.com/schema/hockey/schedule-v6.0.xsd
-const gamesByDateUrl = `/nhl/${accessLevel}/v7/en/games/${gameYear}/${gameMonth}/${gameDay}/schedule.json`;
+// Schedule endpoint for MLB
+// https://developer.sportradar.com/docs/read/baseball/MLB_v7#daily-schedule
+// https://feed.elasticstats.com/schema/baseball/v7/schedule.xsd
+const gamesByDateUrl = `/mlb/${accessLevel}/v7/en/games/${gameYear}/${gameMonth}/${gameDay}/schedule.json`;
 
 // We are going to check games for our team
 const teamId = process.env.TEAM_ID;
@@ -72,17 +72,18 @@ exports.handler = async () => {
 
     // Filter for the game that we are looking for
     const myGame = games.find(
-      (g) => g.home.sr_id === teamId || g.home.sr_id === teamId
+      (g) => g.home.id === teamId || g.home.id === teamId
     );
 
     // If there is a game then process
     if (myGame) {
       const gameId = myGame.id;
-      const homeGame = myGame.home.sr_id === teamId;
+      const homeGame = myGame.home.id === teamId;
 
       // Print the game id
       console.log(`This is my game with Game ID: ${gameId}`);
       const gameDatetime = new Date(myGame.scheduled);
+      const gameYear = gameDatetime.getFullYear();
       const gameMonth = gameDatetime.getMonth() + 1;
       const gameDay = gameDatetime.getDate();
       const gameHour = gameDatetime.getHours();
@@ -94,7 +95,7 @@ exports.handler = async () => {
           .putRule({
             Name: eventBridgeRuleName,
             Description: "Game start time rule to execute the state machine",
-            ScheduleExpression: `cron(${gameMinute} ${gameHour} ${gameDay} ${gameMonth} ? *)`,
+            ScheduleExpression: `cron(${gameMinute} ${gameHour} ${gameDay} ${gameMonth} ? ${gameYear})`,
             State: "ENABLED",
           })
           .promise();

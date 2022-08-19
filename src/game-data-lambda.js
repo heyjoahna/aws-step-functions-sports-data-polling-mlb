@@ -24,27 +24,29 @@ exports.handler = async (event, context, callback) => {
   index += step;
 
   // Set play by play data url
-  const playByPlayUrl = `/nhl/${accessLevel}/v7/en/games/${gameId}/boxscore.json?api_key=${apiKey}&cb=${index}`;
+  const playByPlayUrl = `/mlb/${accessLevel}/v7/en/games/${gameId}/boxscore.json?api_key=${apiKey}&cb=${index}`;
   console.log('playByPlayUrl: ', gamesUrl + playByPlayUrl);
 
   try {
     // Get games data
     const myGame = await getDataFromUrl(playByPlayUrl);
 
-    // If there is a SEA game then process
+    // If your team has a game then process
     if (myGame) {
       // Check the score
-      let upcomingScore = homeGame ? myGame.home?.points || 0 : myGame.away?.points || 0;
-      gameStatus = myGame.status?.toUpperCase() || 'SCHEDULED';
+      let upcomingScore = homeGame ? myGame.game.home?.runs || 0 : myGame.game.away?.runs || 0;
+      gameStatus = myGame.game.status?.toUpperCase() || 'SCHEDULED';
 
-      console.log(`[Period] Clock: [${myGame.period}] ${myGame.clock}`);
+      console.log(`[Half] Current Inning: [${myGame.game.outcome.current_inning_half}] ${myGame.game.outcome.current_inning}`);
       const isGoal = parseInt(upcomingScore) > parseInt(score);
 
       if (isGoal) {
-        // This is a goal. Publish to SNS
-        const message = `Goal occurred! ${
-          myGame.away.name + ': ' + myGame.away.points + ' - ' + myGame.home.name + ': ' + myGame.home.points
-        }`;
+        // This is a run. Publish to SNS
+        const message = `Run occurred! ${
+          myGame.game.away.name + ': ' + myGame.game.away.runs + ' - ' + myGame.game.home.name + ': ' + myGame.game.home.runs
+        }
+        [Half] Current Inning: [${myGame.game.outcome.current_inning_half}] ${myGame.game.outcome.current_inning}
+        `;
 
         await snsClient.publish(
           {
@@ -62,7 +64,7 @@ exports.handler = async (event, context, callback) => {
           }
         );
       } else {
-        console.log(`No goal! Score is ${myGame.away.points + ' - ' + myGame.home.points}`);
+        console.log(`No run! Score is ${myGame.game.away.runs + ' - ' + myGame.game.home.runs}`);
       }
 
       // Set the score by the upcoming score
